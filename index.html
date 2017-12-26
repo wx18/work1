@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+			margin: 0;
+			padding: 0;
+	}
+        #box{
+            width: 400px;
+            height: 200px;
+            border:2px solid #ccc;
+            font-size: 30px;
+            top: 30%;
+            left: 34%;
+            position:absolute;
+        }
+       #box span{
+        width:40px;
+        height:40px;
+        background:red;
+        color:#fff;
+        text-align:center;
+        line-height:40px;
+        font-size:20px;
+        position:absolute;
+        right:0;
+        top:0;
+        }
+</style>
+<body>
+    <button id="btn">这是一个弹框按钮</button>
+</body>
+<script>
+
+    var Fun=function(){
+        this.init();
+    }
+    Fun.prototype={
+        init:function(){
+            this.btn=document.getElementById('btn');
+            this.change();
+            this.boxclose();
+        },
+        change:function(){
+            this.btn.onclick=function(){
+                this.box=document.createElement('div');
+				this.box.id='box';
+                document.body.appendChild(this.box);
+                this.disabled='true'
+                this.close=document.createElement('span');
+                this.close.innerText='X';
+                this.close.className='sp';
+                this.box.appendChild(this.close);
+                this.close.onclick=function(){
+
+                 box.parentNode.removeChild(box);
+
+                }
+                this.disabled='false'
+            }
+        }
+        // boxclose:function(){
+        //     var that=this;
+        //     this.sp=document.querySelector('sp');
+        //     console.log(this)
+        //     // this.sp.onclick=function(){
+        //     //     alert(8)
+        //     // }
+        // }
+    }
+    new Fun();
+</script>
+</html>
