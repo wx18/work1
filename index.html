@@ -52,7 +52,6 @@
                 this.box=document.createElement('div');
 				this.box.id='box';
                 document.body.appendChild(this.box);
-                this.disabled='true'
                 this.close=document.createElement('span');
                 this.close.innerText='X';
                 this.close.className='sp';
@@ -62,17 +61,8 @@
                  box.parentNode.removeChild(box);
 
                 }
-                this.disabled='false'
             }
         }
-        // boxclose:function(){
-        //     var that=this;
-        //     this.sp=document.querySelector('sp');
-        //     console.log(this)
-        //     // this.sp.onclick=function(){
-        //     //     alert(8)
-        //     // }
-        // }
     }
     new Fun();
 </script>
